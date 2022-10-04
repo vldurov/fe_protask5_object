@@ -19,10 +19,10 @@ const documnt = {
         dat: addInfoDatApss,
     },
     prntBase: function () {
-        document.write(`${this.header}<br/>${this.body}<br/>${this.footer}<br/>${this.dat}<br/>`)
+        document.write(`Header: ${this.header}<br/>Body: ${this.body}<br/>Footer: ${this.footer}<br/>Date: ${this.dat}<br/>`)
     },
     prntApps: function () {
-        document.write(`${this.apps.header}<br/>${this.apps.body}<br/>${this.apps.footer}<br/>${this.apps.dat}<br/>`)
+        document.write(`Header apps: ${this.apps.header}<br/>Body apps: ${this.apps.body}<br/>Footre apps: ${this.apps.footer}<br/>Date apps: ${this.apps.dat}<br/>`)
     }
 }
 
