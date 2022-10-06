@@ -1,31 +1,80 @@
-const addInfoHeader = prompt("Введите заголовок");
-const addInfoBody = prompt("Введите текст");
-const addInfoFooter = prompt("Подведите итог");
-const addInfoDat = prompt("Введите дату");
-const addInfoHeaderApps = prompt("Введите заголовок");
-const addInfoBodyApps = prompt("Введите текст");
-const addInfoFooterApps = prompt("Подведите итог");
-const addInfoDatApss = prompt("Введите дату");
+/*
+Создать объект "Документ", в котором определить свойства "Заголовок, тело, футер, дата". 
+Создать в объекте вложенный объект - "Приложение". Создать в объекте "Приложение", вложенные объекты,
+ "Заголовок, тело, футер, дата". 
+Создать методы для заполнения и отображения документа.
+*/
 
 const documnt = {
-    header: addInfoHeader,
-    body: addInfoBody,
-    footer: addInfoFooter,
-    dat: addInfoDat,
+    header: "",
+    body: "",
+    footer: "",
+    dat: "",
     apps: {
-        header: addInfoHeaderApps,
-        body: addInfoBodyApps,
-        footer: addInfoFooterApps,
-        dat: addInfoDatApss,
+        header: {appHeader: ""},
+        body: {appBody: ""},
+        footer: {appFooter: ""},
+        dat: {appDat: ""},
     },
+
+    entrBase: function () {
+        for (let inf in documnt) {
+            if (inf !== "apps") {
+                if (inf !== "entrBase") {
+                    if (inf !== "entrApps") {
+                        if (inf !== "prntBase") {
+                            documnt[inf] = prompt("Веедите данные :" + inf);
+                        }
+                    }
+                }
+            }
+        }
+    },
+
+    entrApps: function () {
+        for (let set in documnt.apps.header) {
+            documnt.apps.header[set] = prompt("Веедите данные :" + set);      
+        }
+        for (let set in documnt.apps.body) {
+            documnt.apps.body[set] = prompt("Веедите данные :" + set);
+        }
+        for (let set in documnt.apps.footer) {
+            documnt.apps.footer[set] = prompt("Веедите данные :" + set);
+        }
+        for (let set in documnt.apps.dat) {
+            documnt.apps.dat[set] = prompt("Веедите данные :" + set);
+        }
+    },
+
     prntBase: function () {
-        document.write(`Header: ${this.header}<br/>Body: ${this.body}<br/>Footer: ${this.footer}<br/>Date: ${this.dat}<br/>`)
-    },
-    prntApps: function () {
-        document.write(`Header apps: ${this.apps.header}<br/>Body apps: ${this.apps.body}<br/>Footre apps: ${this.apps.footer}<br/>Date apps: ${this.apps.dat}<br/>`)
+        for (let inf in documnt) {
+            if (inf !== "apps") {
+                if (inf !== "entrBase") {
+                    if (inf !== "entrApps") {
+                        if (inf !== "prntBase") {
+                            documnt[inf] = document.write("Информация из " + inf + " : " + documnt[inf] + "<br/>");
+                        }
+                    }
+                }
+            }
+        }
+
+        for (let set in documnt.apps.header) {
+            documnt.apps.header[set] = document.write("Вложенный обьект в header: " + documnt.apps.header[set] + "<br/>");      
+        }
+        for (let set in documnt.apps.body) {
+            documnt.apps.body[set] = document.write("Вложенный обьект в body: " + documnt.apps.body[set] + "<br/>");
+        }
+        for (let set in documnt.apps.footer) {
+            documnt.apps.footer[set] = document.write("Вложенный обьект в footer: " + documnt.apps.footer[set] + "<br/>");
+        }
+        for (let set in documnt.apps.dat) {
+            documnt.apps.dat[set] = document.write("Вложенный обьект в dat: " + documnt.apps.dat[set] + "<br/>");
+        }
     }
 }
 
+documnt.entrBase();
+documnt.entrApps();
 documnt.prntBase();
-documnt.prntApps();
 
