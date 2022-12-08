@@ -19,14 +19,8 @@ const documnt = {
 
     entrBase: function () {
         for (let inf in documnt) {
-            if (inf !== "apps") {  
-            if (inf !== "entrBase") {
-            if (inf !== "entrApps") {   
-            if (inf !== "prntBase") {
-                documnt[inf] = prompt("Веедите данные :" + inf);
-            };
-            };
-            }; 
+            if (inf !== "apps" && inf !== "entrBase" && inf !== "entrApps" && inf !== "prntBase") {
+                documnt[inf] = prompt("Веедите данные :" + inf); 
             };
         };
     },
@@ -48,16 +42,10 @@ const documnt = {
 
     prntBase: function () {
         for (let inf in documnt) {
-            if (inf !== "apps") {     
-            if (inf !== "entrBase") {    
-            if (inf !== "entrApps") {   
-            if (inf !== "prntBase") {
+            if (inf !== "apps" && inf !== "entrBase" && inf !== "entrApps" && inf !== "prntBase") {     
                 documnt[inf] = document.write("Информация из " + inf + " : " + documnt[inf] + "<br/>");
             };
-            };
-            };
-            };
-         };           
+        };           
 
         for (let set in documnt.apps.header) {
             documnt.apps.header[set] = document.write("Вложенный обьект в header: " + documnt.apps.header[set] + "<br/>");      
